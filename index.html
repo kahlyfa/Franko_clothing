@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRANKO CLOTHING — Home</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* HOME-ONLY STYLES */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 80px 40px 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  opacity: 0.22;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(245,240,232,.5) 0%, rgba(245,240,232,.1) 40%, rgba(245,240,232,.75) 100%);
+}
+
+.hero-inner { max-width: 800px; z-index: 2; }
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 18px; border-radius: var(--r-pill);
+  background: rgba(200,169,110,.2); border: 1px solid rgba(200,169,110,.4);
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: #8b6a30; margin-bottom: 28px;
+}
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--accent);
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero h1 {
+  font-family: var(--fd);
+  font-size: clamp(56px, 9vw, 108px);
+  font-weight: 900; line-height: .92;
+  letter-spacing: -3px; color: var(--dark); margin-bottom: 26px;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+
+.hero p {
+  font-size: 18px; color: var(--mid);
+  font-weight: 300; line-height: 1.7;
+  max-width: 460px; margin: 0 auto 44px;
+}
+
+.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+.hero-stats {
+  display: flex; gap: 52px; justify-content: center;
+  margin-top: 70px; flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: var(--fd); font-size: 30px;
+  font-weight: 900; color: var(--dark); line-height: 1;
+}
+.stat-lbl { font-size: 12px; color: var(--mid); margin-top: 4px; letter-spacing: .5px; }
+.stat-divider { width: 1px; height: 36px; background: rgba(100,80,50,.18); align-self: center; }
+
+/* products section */
+.products-section { padding: 80px 40px 40px; }
+.products-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; margin-bottom: 44px;
+  flex-wrap: wrap; gap: 16px;
+}
+.view-all {
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--mid);
+  text-decoration: none; display: flex; align-items: center; gap: 6px;
+  transition: color .2s;
+}
+.view-all:hover { color: var(--dark); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="main-nav">
+  <a href="index.html" class="nav-logo">Frank<span>o</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="pages/shirts.html">Shirts</a></li>
+    <li><a href="pages/tshirts.html">T-Shirts</a></li>
+    <li><a href="pages/shoes.html">Shoes</a></li>
+    <li><a href="pages/about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#" class="nav-cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Cart <span class="cart-count">0</span>
+    </a>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="pages/shirts.html">Shirts</a>
+  <a href="pages/tshirts.html">T-Shirts</a>
+  <a href="pages/shoes.html">Shoes</a>
+  <a href="pages/about.html">About</a>
+</div>
+
+<!-- PAGE INDICATOR -->
+<div class="page-indicator">
+  <a class="pi-item" href="index.html"><span class="pi-label">Home</span><span class="pi-dot"></span></a>
+  <a class="pi-item" href="pages/shirts.html"><span class="pi-label">Shirts</span><span class="pi-dot"></span></a>
+  <a class="pi-item" href="pages/tshirts.html"><span class="pi-label">T-Shirts</span><span class="pi-dot"></span></a>
+  <a class="pi-item" href="pages/shoes.html"><span class="pi-label">Shoes</span><span class="pi-dot"></span></a>
+  <a class="pi-item" href="pages/about.html"><span class="pi-label">About</span><span class="pi-dot"></span></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1600&q=80&fit=crop" alt="Fashion fabric texture">
+  </div>
+  <div class="hero-inner">
+    <div class="hero-tag fade-up d1">New Collection — SS 2025</div>
+    <h1 class="fade-up d2">Wear<br><em>your</em><br>story.</h1>
+    <p class="fade-up d3">Premium fabrics, effortless silhouettes. Clothing crafted for the ones who live with intention.</p>
+    <div class="hero-btns fade-up d4">
+      <a href="pages/shirts.html" class="btn btn-dark">Shop Now</a>
+      <a href="pages/about.html" class="btn btn-outline">Our Story</a>
+    </div>
+    <!-- <div class="hero-stats fade-up" style="animation-delay:.5s">
+      <div class="stat"><div class="stat-num">4K+</div><div class="stat-lbl">Happy Customers</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="stat-num">120+</div><div class="stat-lbl">Styles Available</div></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Premium Fabric</div></div>
+    </div> -->
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="products-section">
+  <div class="products-header">
+    <div>
+      <div class="section-tag">Featured This Week</div>
+      <h2 class="section-title">New Arrivals</h2>
+    </div>
+    <a href="pages/shirts.html" class="view-all">View All
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card" data-cat="shirts">
+      <div class="card-img">
+        <img src="/images/oxford/IMG_20260327_170006_250.jpg" alt="Oxford shoes">
+        <span class="card-badge badge-new">New</span>
+        <button class="card-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Shoes</div>
+        <div class="card-name">Oxford Classic</div>
+        <div class="card-variant">White · S M L XL</div>
+        <div class="card-footer">
+          <span class="card-price">$89</span>
+          <button class="btn-buy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="tshirts">
+      <div class="card-img">
+        <img src="/images/IMG_20260326_074405_065.jpg" alt="Crew tshirt">
+        <span class="card-badge badge-hot">Hot</span>
+        <button class="card-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Crew-Shirts</div>
+        <div class="card-name">Essential Crew</div>
+        <div class="card-variant">Sage · XS S M L</div>
+        <div class="card-footer">
+          <span class="card-price">$45</span>
+          <button class="btn-buy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="shirts">
+      <div class="card-img">
+        <img src="/images/suits/IMG_20260327_170005_963.jpg" alt="suits">
+        <span class="card-badge badge-new">New</span>
+        <button class="card-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Suits</div>
+        <div class="card-name">Linen Relaxed</div>
+        <div class="card-variant">Clay · S M L</div>
+        <div class="card-footer">
+          <span class="card-price">$72</span>
+          <button class="btn-buy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="shoes">
+      <div class="card-img">
+        <img src="/images/IMG_20260326_074404_690.jpg" alt="Canvas sneaker">
+        <span class="card-badge badge-new">New</span>
+        <button class="card-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Shirt</div>
+        <div class="card-name">Breatheable soft linen</div>
+        <div class="card-variant">Slate · 40–45</div>
+        <div class="card-footer">
+          <span class="card-price">$120</span>
+          <button class="btn-buy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<div class="promo-banner">
+  <div>
+    <div class="banner-tag">Limited Time</div>
+    <div class="banner-title">End of season.<br>Start of savings.</div>
+    <div class="banner-sub">Up to 40% off selected shirts, tees, and footwear. While stocks last.</div>
+  </div>
+  <a href="pages/shirts.html" class="btn btn-accent">Shop the Sale</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="footer-logo">Frank<span>o</span></a>
+      <div class="footer-tagline">Premium clothing, minimal design.</div>
+    </div>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="pages/shirts.html">Shirts</a>
+      <a href="pages/tshirts.html">T-Shirts</a>
+      <a href="pages/shoes.html">Shoes</a>
+      <a href="pages/about.html">About</a>
+    </nav>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">F</a>
+      <a href="#" class="social-btn">In</a>
+      <a href="#" class="social-btn">X</a>
+      <a href="#" class="social-btn">G</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Franko Clothing. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a><a href="#">Returns</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
